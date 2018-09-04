@@ -1,0 +1,64 @@
+.tweet-container{
+    border: 1px solid #b7b7b7;
+    border-radius: 7px;
+    padding: 15px;
+    width: 90%;
+    margin: 10px 0px;
+}
+.avatar img{
+    width: 50px;
+    border-radius: 50px;
+    height: 50px;
+}
+
+.youtube_frame{
+    width: 50%;
+	float: left;
+}
+
+.tweet_frame{
+	float: left;
+	padding: 0px 20px;
+	width: 50%;
+}
+.avatar, .display {
+    float: left;
+}
+.display{
+    padding-left: 15px;
+    padding-top: 3px;
+    line-height: 20px;
+}
+.twitter_logo {
+    float: right;
+    width: 35px;
+    padding-top: 7px;
+}
+.twitter_logo img{
+    width: 100%;
+}
+span.name {
+    font-weight: bold;
+    font-size: 18px;
+}
+span.user {
+    color: #969696;
+    font-size: 14px;
+}
+.navigation{
+	background-color: #e2e2e2;
+    padding: 15px 10px;
+    font-weight: 500;
+}
+input[type=text]{
+    padding: 5px 10px;
+}
+.youtube_input {
+    float: left;
+    margin-right: 20px;
+}
+.content_text {
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+}
