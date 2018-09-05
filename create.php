@@ -7,14 +7,16 @@ $settings = array(
     'consumer_secret' => "Y49dNi2NPN9vJaPS95QnRLslOqisEuC7v934lHOfN05cVjbtDB"
 );
 
-$url    = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-$requestMethod = 'GET';
+$url    = 'https://api.twitter.com/1.1/statuses/update.json';
+$requestMethod = 'POST';
 
-$getfield = '?q=#nowplaying';
+$postfields = array(
+    'status' => $_GET["status"] . " #nowplaying \n" . $_GET["y"]
+);
 
 $twitter = new TwitterAPIExchange($settings);
-echo $twitter->setGetfield($getfield)
-    ->buildOauth($url, $requestMethod)
+echo $twitter->buildOauth($url, $requestMethod)
+    ->setPostfields($postfields)
     ->performRequest();
-        
+print_r($_GET["status"] . " #nowplaying /n" . $_GET["y"]);        
 ?>
