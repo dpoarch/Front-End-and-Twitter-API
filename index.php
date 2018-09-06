@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-	<div class="row">
+	<div class="row pt20">
 		<h1>#nowplaying in San Francisco</h1>
 		<p>This page shows #nowplaying tweets in San Francisco that contain a youtube link. It also <br /> allows you to post a #nowplaying tweet with a YouTube link.</p>
 	</div>

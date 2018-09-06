@@ -25,6 +25,11 @@ $(document).ready(function() {
                     var screen_name = d[i].user.screen_name;
                     var img_url = d[i].user.profile_image_url;
                     var youtube_url = "";
+                    var monthNames = ["January", "February", "March", "April", "May", "June",
+                      "July", "August", "September", "October", "November", "December"
+                    ];
+                    var tweetdate = new Date(d[i].created_at);
+                    var tweetdate_formatted = tweetdate.getUTCDate() + " " + monthNames[tweetdate.getUTCMonth()] + " " + tweetdate.getUTCFullYear();
 
                     if (d[i].entities.urls.length != 0) {
                         if (d[i].entities.urls[0].expanded_url.search("www.youtube.com") != -1) {
@@ -34,10 +39,12 @@ $(document).ready(function() {
                     var content = d[i].text;
                     var tweet = '<div class="tweet-container">';
                     if (youtube_url != "") {
-                        tweet += '<div class="youtube_frame"><iframe width="100%" height="280" src="' + youtube_url + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>';
+                        tweet += '<div class="youtube_frame"><iframe width="100%" height="280" src="' + youtube_url + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div><div class="tweet_frame">';
+                    }else{
+                        tweet+= '<div class="tweet_frame" style="width:100% !important;">';
                     }
 
-                    tweet += '<div class="tweet_frame"><div class="avatar"><img src="' + img_url + '"></div><div class="display"><span class="name">' + name + '</span><br /><span class="user">@' + screen_name + '</span></div><div class="twitter_logo"><img src="https:\/\/logos-download.com/wp-content/uploads/2016/02/Twitter_logo_bird_transparent_png.png"></div><div class="content_text">' + content + '</div></div></div>';
+                    tweet += '<div class="avatar"><img src="' + img_url + '"></div><div class="display"><span class="name">' + name + '</span><br /><span class="user">@' + screen_name + '</span></div><div class="twitter_logo"><img src="https:\/\/logos-download.com/wp-content/uploads/2016/02/Twitter_logo_bird_transparent_png.png"></div><div class="content_text">' + content + '</div><div class="content_date">' + tweetdate_formatted + '</div></div></div>';
                     $("#tweeter-feed").append(tweet);
                     limit++;
                 }

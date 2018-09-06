@@ -1,69 +1,26 @@
 <?php
 
-/**
- * Twitter-API-PHP : Simple PHP wrapper for the v1.1 API
- *
- * PHP version 5.3.10
- *
- * @category Awesomeness
- * @package  Twitter-API-PHP
- * @author   James Mallison <me@j7mbo.co.uk>
- * @license  MIT License
- * @version  1.0.4
- * @link     http://github.com/j7mbo/twitter-api-php
- */
 class TwitterAPIExchange
 {
-    /**
-     * @var string
-     */
+
     private $oauth_access_token;
 
-    /**
-     * @var string
-     */
     private $oauth_access_token_secret;
 
-    /**
-     * @var string
-     */
     private $consumer_key;
 
-    /**
-     * @var string
-     */
     private $consumer_secret;
 
-    /**
-     * @var array
-     */
     private $postfields;
 
-    /**
-     * @var string
-     */
     private $getfield;
 
-    /**
-     * @var mixed
-     */
     protected $oauth;
 
-    /**
-     * @var string
-     */
     public $url;
 
-    /**
-     * @var string
-     */
     public $requestMethod;
 
-    /**
-     * The HTTP status code from the previous request
-     *
-     * @var int
-     */
     protected $httpStatusCode;
 
     /**
